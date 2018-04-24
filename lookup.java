@@ -1,6 +1,6 @@
 package Project;
 
-import hw6.LookupTable;
+import LookupTable;
 
 import java.io.FileReader;
 import java.io.IOException;
