@@ -69,12 +69,12 @@ import java.util.Scanner;
 	   */
 	   public String reverseLookup(String v)
 	   { 
-		   String zip = null;
+		   String driverName = null;
 		   int location = Collections.binarySearch(byValue, (new Item(v, null)));
 		   if (location >= 0) {
-			   zip = byValue.get(location).getValue();
+			   driverName = byValue.get(location).getValue();
 		   }
-		   return zip;
+		   return driverName;
 	   }
 	}
 

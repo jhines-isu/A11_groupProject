@@ -13,26 +13,32 @@ public class fileCreation {
 	  
 	   public static void main(String[] args)
 	   {
-		  
+		  //The cose below reads the appdata file and creates writers for two files
 		   try (Scanner in = new Scanner(new File("appdata.txt"));
 	           PrintWriter driverOut = new PrintWriter("drivers.txt");
-	           PrintWriter riderOut = new PrintWriter("riders.txt");
-	           PrintWriter driverInfoOut = new PrintWriter("driverInfo.txt"))
+	           PrintWriter riderOut = new PrintWriter("riders.txt"))
 	      {
 			   ArrayList<String> drivers = new ArrayList();
 			   ArrayList<String> riders = new ArrayList();
-		 
+		 double totalDistance = 0;
 			   while (in.hasNextLine())
 			      {
-				   
-				   int driverID = in.nextInt();
+				   //This puts the data onto the driver.txt
+				   String driverID = in.next();
 				   String driverName = in.next();
-				   int driverStart = in.nextInt();
+				   double distance = in.nextDouble();
 				   driverOut.println("ID: " + driverID + " Name: " 
-				   +  driverName + " Location: " + driverStart);
-				   driverInfoOut.println(" " + driverID + " " + driverStart);
+				   +  driverName + " Location: " + distance);
+				   double reportD = totalDistance + distance;
+				   
+				   
 
-				   //SAME LINE ON TEXT FILE
+				   /* DRIVER AND RIDER ARE ONSAME LINE ON TEXT FILE
+				   // each variable is separated by one space and there
+				   // is 1 driver and 1 rider per line*/
+				   
+				   
+				   //This writes the data to the rider.txt
 				   
 				   int riderID = in.nextInt();
 				   String riderName = in.next();
@@ -44,11 +50,12 @@ public class fileCreation {
 				   + riderStart + " End Location:" + riderEnd + " charge: " + charge + " Date: " + date);
 
 			      } 
-			   driverInfoOut.close();
+			  
 			   driverOut.close();
 			   riderOut.close();
 			   
 	      }
+		  
 	      catch (IOException e)
 	      {
 	         e.printStackTrace();
