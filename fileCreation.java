@@ -13,7 +13,7 @@ public class fileCreation {
 	  
 	   public static void main(String[] args)
 	   {
-		  //The cose below reads the appdata file and creates writers for two files
+		  //The code below reads the appdata file and creates writers for two files
 		   try (Scanner in = new Scanner(new File("appdata.txt"));
 	           PrintWriter driverOut = new PrintWriter("drivers.txt");
 	           PrintWriter riderOut = new PrintWriter("riders.txt"))
