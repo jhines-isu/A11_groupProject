@@ -1,6 +1,6 @@
 package Project;
 	
-	import hw6.Item;
+	import Item;
 
 import java.util.ArrayList;
 import java.util.Collections;
